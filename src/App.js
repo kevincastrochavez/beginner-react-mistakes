@@ -1,32 +1,29 @@
 import logo from './logo.svg';
 import './App.css';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 function App() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  // DO NOT USE STATE IF YOU DON'T NEED TO
+  // const [email, setEmail] = useState('');
+  // const [password, setPassword] = useState('');
+  const emailRef = useRef();
+  const passwordRef = useRef();
 
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log({ email, password });
+    // console.log({ email, password });
+    console.log({
+      email: emailRef.current.value,
+      password: passwordRef.current.value,
+    });
   };
 
   return (
     <form onSubmit={onSubmit}>
       <label htmlFor='email'>Email</label>
-      <input
-        type='email'
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        id='email'
-      />
+      <input type='email' id='email' ref={emailRef} />
       <label htmlFor='password'>Password</label>
-      <input
-        type='password'
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        id='password'
-      />
+      <input type='password' ref={passwordRef} id='password' />
       <button type='submit'>Submit</button>
     </form>
   );
