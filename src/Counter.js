@@ -4,7 +4,16 @@ function Counter() {
   const [count, setCount] = useState(0);
 
   function adjustCount(amount) {
-    setCount(count + amount);
+    // If I need to perform this twice, it wouldn't work
+    // React groups them together and performs them at the same time
+    // 0 + 1
+    // setCount(count + amount);
+    // 0 + 1
+    // setCount(count + amount);
+
+    // If using the previous value, always use the function version
+    setCount((prevCount) => prevCount + amount);
+    setCount((prevCount) => prevCount + amount);
   }
 
   return (
