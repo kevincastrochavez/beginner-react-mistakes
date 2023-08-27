@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import { useState, useRef, useEffect } from 'react';
 import Counter from './Counter';
+import Form from './Form';
 
 function App() {
   // DO NOT USE STATE IF YOU DON'T NEED TO
@@ -32,13 +33,14 @@ function App() {
     //   <input type='password' ref={passwordRef} id='password' />
     //   <button type='submit'>Submit</button>
     // </form>
-    <form onSubmit={onSubmit}>
-      <input type='firstName' id='firstName' ref={firstNameRef} />
-      <input type='lastName' ref={lastNameRef} id='lastName' />
-      {fullName}
-      <button type='submit'>Submit</button>
-    </form>
+    // <form onSubmit={onSubmit}>
+    //   <input type='firstName' id='firstName' ref={firstNameRef} />
+    //   <input type='lastName' ref={lastNameRef} id='lastName' />
+    //   {fullName}
+    //   <button type='submit'>Submit</button>
+    // </form>
     // <Counter />
+    <Form />
   );
 }
 
