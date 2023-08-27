@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { useState, useRef } from 'react';
+import Counter from './Counter';
 
 function App() {
   // DO NOT USE STATE IF YOU DON'T NEED TO
@@ -19,13 +20,14 @@ function App() {
   };
 
   return (
-    <form onSubmit={onSubmit}>
-      <label htmlFor='email'>Email</label>
-      <input type='email' id='email' ref={emailRef} />
-      <label htmlFor='password'>Password</label>
-      <input type='password' ref={passwordRef} id='password' />
-      <button type='submit'>Submit</button>
-    </form>
+    // <form onSubmit={onSubmit}>
+    //   <label htmlFor='email'>Email</label>
+    //   <input type='email' id='email' ref={emailRef} />
+    //   <label htmlFor='password'>Password</label>
+    //   <input type='password' ref={passwordRef} id='password' />
+    //   <button type='submit'>Submit</button>
+    // </form>
+    <Counter />
   );
 }
 
