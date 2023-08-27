@@ -1,22 +1,27 @@
 import logo from './logo.svg';
 import './App.css';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Counter from './Counter';
 
 function App() {
   // DO NOT USE STATE IF YOU DON'T NEED TO
   // const [email, setEmail] = useState('');
   // const [password, setPassword] = useState('');
-  const emailRef = useRef();
-  const passwordRef = useRef();
+  // const emailRef = useRef();
+  // const passwordRef = useRef();
+  const firstNameRef = useRef();
+  const lastNameRef = useRef();
+  const [fullName, setFullName] = useState('');
 
   const onSubmit = (e) => {
+    // e.preventDefault();
+    // // console.log({ email, password });
+    // console.log({
+    //   email: emailRef.current.value,
+    //   password: passwordRef.current.value,
+    // });
     e.preventDefault();
-    // console.log({ email, password });
-    console.log({
-      email: emailRef.current.value,
-      password: passwordRef.current.value,
-    });
+    setFullName(`${firstNameRef.current.value} ${lastNameRef.current.value}`);
   };
 
   return (
@@ -27,7 +32,13 @@ function App() {
     //   <input type='password' ref={passwordRef} id='password' />
     //   <button type='submit'>Submit</button>
     // </form>
-    <Counter />
+    <form onSubmit={onSubmit}>
+      <input type='firstName' id='firstName' ref={firstNameRef} />
+      <input type='lastName' ref={lastNameRef} id='lastName' />
+      {fullName}
+      <button type='submit'>Submit</button>
+    </form>
+    // <Counter />
   );
 }
 
