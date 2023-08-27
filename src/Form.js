@@ -5,6 +5,10 @@ function Form() {
   const [name, setName] = useState('');
   const [darkMode, setDarkMode] = useState(false);
 
+  // With every render, Javascript generates a brand new person object when darkMode changes
+  //   const person = { age, name };
+
+  // useMemo keeps the previous object value unless certain properties change
   const person = useMemo(() => {
     return { age, name };
   }, [age, name]);
