@@ -21,12 +21,14 @@ function EventHandlers() {
 
   return (
     <>
+      {/* onSubmit expects a function as a parameter */}
       <form onSubmit={handleSubmit}>
         <input type='text' name='text' defaultValue='Initial' />
         <button type='submit'>Submit</button>
       </form>
       {array?.map((number) => {
         return (
+          // This function does not return anything. I cannot say just (print(number))
           <button key={number} onClick={() => print(number)}>
             Print {number}
           </button>
@@ -34,6 +36,8 @@ function EventHandlers() {
       })}
       {array?.map((number) => {
         return (
+          // Here you are passing the return value of a function, since it's returning something
+          // When code runs, it assigns the return value to the onClick listener
           <button key={number} onClick={doubler(number)}>
             Double {number}
           </button>
