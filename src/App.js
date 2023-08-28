@@ -3,6 +3,7 @@ import './App.css';
 import { useState, useRef, useEffect } from 'react';
 import Counter from './Counter';
 import Form from './Form';
+import EventHandlers from './EventHandlers';
 
 function App() {
   // DO NOT USE STATE IF YOU DON'T NEED TO
@@ -40,7 +41,8 @@ function App() {
     //   <button type='submit'>Submit</button>
     // </form>
     // <Counter />
-    <Form />
+    // <Form />
+    <EventHandlers />
   );
 }
 
