@@ -29,6 +29,7 @@ function EventHandlers() {
       {array?.map((number) => {
         return (
           // This function does not return anything. I cannot say just (print(number))
+          // When passing custom data, this is useful
           <button key={number} onClick={() => print(number)}>
             Print {number}
           </button>
@@ -38,6 +39,7 @@ function EventHandlers() {
         return (
           // Here you are passing the return value of a function, since it's returning something
           // When code runs, it assigns the return value to the onClick listener
+          // Rarely used
           <button key={number} onClick={doubler(number)}>
             Double {number}
           </button>
